@@ -1,71 +1,30 @@
 
-import { useState } from 'react';
 import WeekView from './features/WeekView';
 import './App.css';
-import EditExercise from './features/EditExercise';
+import AddExercise from './features/AddExercise';
+import { useState } from 'react';
+import { TEST_EXERCISE_DATA } from './TEST_EXERCISE_DATA';
 
 
 function App() {
+
+  const [exercise, setExercise] = useState(TEST_EXERCISE_DATA);
+
+  const deleteExercise = (id) => {
+    setExercise(exercise.filter(exercise => exercise.id !== id))
+  }
+
+  const addExercise = (newExercise) => {
+    setExercise(exercise.concat(newExercise))
+  }
+
   return(
     <>
-      <WeekView/>
-      <EditExercise />
+      <WeekView deleteExercise={deleteExercise} exercise={exercise}/>
+      <AddExercise addExercise={addExercise}/>
     </>
   )
 }
 
+
 export default App;
-// function ExerciseList() {
-//   const [exerciseList, setExerciseList ]= useState([
-//     {
-//       id: 0,
-//       name: "Lat Pulldown",
-//       sets: 3,
-//       reps: 15,
-//       weekday: "Monday"
-//     },
-//     {
-//       id: 1,
-//       name: "Cable Row",
-//       sets: 3,
-//       reps: 15,
-//       weekday: "Monday"
-//     },
-//     {
-//       id: 2,
-//       name: "Leg Press",
-//       sets: 3,
-//       reps: 15,
-//       weekday: "Wednesday"
-//     },
-//     {
-//       id: 3,
-//       name: "Leg Curl",
-//       sets: 3,
-//       reps: 12
-//     },
-//     {
-//       id: 4,
-//       name: "Front Raise",
-//       sets: 3,
-//       reps: 12
-//     }
-//   ]);
-
-//   const deleteExercise = (id) => {
-//     setExerciseList(exerciseList.filter(exercise => exercise.id !== id))
-//   }
-
-//   return (
-//     <div>
-//       < WeekView />
-//       {exerciseList.map(exercise => (
-//         <div key={exercise.id}>
-//           {`${exercise.name}: ${exercise.sets} x ${exercise.reps}`}
-//           <button onClick={() => deleteExercise(exercise.id)}>Delete</button>
-//         </div>))}
-//     </div>
-//   );
-// }
-
-// export default ExerciseList;
