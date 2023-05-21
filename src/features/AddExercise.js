@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { Button, Modal, ModalHeader, ModalBody, FormGroup, Label } from 'reactstrap';
-import { Formik, Field, Form, ErrorMessage } from 'formik';
+import { Button, Modal, ModalHeader, ModalBody, FormGroup, Label, Row, Col } from 'reactstrap';
+import { Formik, Field, Form } from 'formik';
 
 const AddExercise = ({addExercise}) => {
     const [modalOpen, setModalOpen] = useState(false);
@@ -8,7 +8,9 @@ const AddExercise = ({addExercise}) => {
     const handleSubmit = (values) => {
         const newExercise = {
             exerciseday : values.exerciseday,
-            name : values.name
+            name : values.name,
+            sets : values.sets,
+            reps : values.reps
         };
         console.log('New Exercise:', newExercise);
         setModalOpen(false);
@@ -26,7 +28,9 @@ const AddExercise = ({addExercise}) => {
                 <ModalBody>
                     <Formik initialValues={{
                         exerciseday: undefined,
-                        name: ''
+                        name: '',
+                        sets: '',
+                        reps: ''
                     }}
                     onSubmit={handleSubmit}
                     >
@@ -50,16 +54,42 @@ const AddExercise = ({addExercise}) => {
                                     <option>Su</option>
                                 </Field>
                             </FormGroup>
-                            <FormGroup>
-                                <Label htmlFor='name'>
+                            <FormGroup >
+                            <Label htmlFor='name' className='col-md-3'>
                                     Exercise Name
                                 </Label>
                                 <Field
                                     name='name'
                                     placeholder='Exercise Name'
-                                    className='form-control'
+                                    className='form-control col-md-5'
                                 />
                             </FormGroup>
+                            <Row>
+                                <Col className='col-md-6'>
+                                    <FormGroup>
+                                        <Label htmlFor='sets'>
+                                            Sets
+                                        </Label>
+                                        <Field
+                                            name='sets'
+                                            placeholder='Sets'
+                                            className='form-control'
+                                        />
+                                    </FormGroup>
+                                </Col>
+                                <Col>
+                                    <FormGroup>
+                                        <Label htmlFor='reps'>
+                                            Reps
+                                        </Label>
+                                        <Field
+                                            name='reps'
+                                            placeholder='Reps'
+                                            className='form-control'
+                                        />
+                                    </FormGroup>
+                                </Col>
+                            </Row>
                             <Button type='submit'>
                                 Submit
                             </Button>
