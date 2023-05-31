@@ -18,7 +18,7 @@ const AddExercise = ({addExercise}) => {
     }
     return(
         <>
-            <Button outline onClick={() => setModalOpen(true)}>
+            <Button className='btn-outline-success' outline onClick={() => setModalOpen(true)}>
                 <i className='fa fa-pencil fa-lg' /> Add Exercises
             </Button>
             <Modal isOpen={modalOpen}>

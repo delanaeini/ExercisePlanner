@@ -5,6 +5,7 @@ import AddExercise from './features/AddExercise';
 import { useState } from 'react';
 import { TEST_EXERCISE_DATA } from './TEST_EXERCISE_DATA';
 
+let nextId = 10;
 
 function App() {
 
@@ -14,7 +15,11 @@ function App() {
     setExercise(exercise.filter(exercise => exercise.id !== id))
   }
 
-  const addExercise = (newExercise) => {
+  const addExercise = (newExerciseData) => {
+    const newExercise = {
+      id: nextId++,
+      ...newExerciseData
+    }
     setExercise(exercise.concat(newExercise))
   }
 

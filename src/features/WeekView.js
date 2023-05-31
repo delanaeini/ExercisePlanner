@@ -28,8 +28,8 @@ const WeekView = ({deleteExercise, exercise}) => {
                                     return(
                                         <div>
                                             {exercise.name} 
-                                            {exercise.sets && exercise.reps &&`: ${exercise.sets} x ${exercise.reps}`}
-                                            <Button onClick={() => deleteExercise(exercise.id)}>x</Button>
+                                            {exercise.sets && exercise.reps &&`: ${exercise.sets} x ${exercise.reps} `}
+                                            <Button className='btn-sm mb-2' onClick={() => deleteExercise(exercise.id)}>x</Button>
                                         </div>
                                     );
                                 })}
