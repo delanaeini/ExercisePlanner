@@ -2,15 +2,15 @@ import { Table, Card, CardHeader, CardBody, Button } from 'reactstrap';
 import { TEST_EXERCISE_DATA } from '../TEST_EXERCISE_DATA';
 import { useState } from 'react';
 
-const WeekView = ({deleteExercise, exercise}) => {
-   const week = [
-    "M", "T", "W", "Th", "F", "Sa", "Su"];
+const WeekView = ({ deleteExercise, exercise }) => {
+    const week = [
+        "M", "T", "W", "Th", "F", "Sa", "Su"];
 
 
-   return (
+    return (
         <Card>
             <CardHeader className='bg-success'>
-                <h3>Week</h3>
+                <h3>Weekly Calendar</h3>
             </CardHeader>
             <CardBody>
                 <Table>
@@ -18,25 +18,26 @@ const WeekView = ({deleteExercise, exercise}) => {
                     </tr>
                     <tr>
                         {week.map((dayofweek) => {
-                            return(
-                            <td>
-                                {exercise.filter((exercise) => {
-                                    return(
-                                        exercise.exerciseday === dayofweek
-                                    );
-                                }).map((exercise) => {
-                                    return(
-                                        <div>
-                                            {exercise.name} 
-                                            {exercise.sets && exercise.reps &&`: ${exercise.sets} x ${exercise.reps} `}
-                                            <Button className='btn-sm mb-2' onClick={() => deleteExercise(exercise.id)}>x</Button>
-                                        </div>
-                                    );
-                                })}
-                            </td> 
-                        )})}
+                            return (
+                                <td>
+                                    {exercise.filter((exercise) => {
+                                        return (
+                                            exercise.exerciseday === dayofweek
+                                        );
+                                    }).map((exercise) => {
+                                        return (
+                                            <div>
+                                                {exercise.name}
+                                                {exercise.sets && exercise.reps && `: ${exercise.sets} x ${exercise.reps} `}
+                                                <Button className='btn-sm mb-2' onClick={() => deleteExercise(exercise.id)}>x</Button>
+                                            </div>
+                                        );
+                                    })}
+                                </td>
+                            )
+                        })}
                     </tr>
-                </Table> 
+                </Table>
             </CardBody>
         </Card>
     );
