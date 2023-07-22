@@ -1,23 +1,23 @@
-th{
-    /* border-bottom: 1px solid;
+th {
+  /* border-bottom: 1px solid;
     border-color: lightgrey; */
-    width:5rem;
-    color:salmon;
-    padding-bottom: 1rem;
+  width: 5rem;
+  color: salmon;
+  padding-bottom: 1rem;
 }
 
-h3{
-    color:lightsalmon;
+h3 {
+  color: lightsalmon;
 }
 
-CardHeader{
-    background: #28a745;
+CardHeader {
+  background: #28a745;
 }
 
-Button[type=submit]{
-    background-color: lightsalmon;
+Button[type="submit"] {
+  background-color: lightsalmon;
 }
 
-Label{
-    color: #198753;
+Label {
+  color: #198753;
 }
