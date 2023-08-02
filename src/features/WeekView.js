@@ -6,7 +6,7 @@ const WeekView = ({ deleteExercise, exercise }) => {
   return (
     <Card>
       <CardHeader className="bg-success">
-        <h3>Weekly Calendar</h3>
+        <h3>Exercise Planner</h3>
       </CardHeader>
       <CardBody>
         <Table>
