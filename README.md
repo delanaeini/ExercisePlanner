@@ -1,6 +1,7 @@
 # Workout Planner
 
 A weekly-schedule builder for workouts
+https://exercise-planner-delanaeini.web.app/
 
 ## Description
 
