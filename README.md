@@ -1,6 +1,6 @@
 # Workout Planner
 
-A weekly-schedule builder for workouts
+A workout schedule builder app built with React  
 https://exercise-planner-delanaeini.web.app/
 
 ## Description
