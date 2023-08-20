@@ -15,10 +15,10 @@ This peoject has a button that opens a form-modal where the user can select the 
 npm -v
 ```
 
-- Install package.json
+- Install node modules
 
 ```
-npm install package.json
+npm install
 ```
 
 - Run on local computer
